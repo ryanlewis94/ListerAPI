@@ -15,7 +15,7 @@ namespace TechAPITest.Data.Repositories
         private readonly string _connStr;
         public PatientRepo(IOptions<ConnectionStrings> connectionStrings)
         {
-            _connStr = connectionStrings.Value.DefaultConnectionString;
+            _connStr = connectionStrings.Value.DefaultConnection;
         }
 
         /// <summary>

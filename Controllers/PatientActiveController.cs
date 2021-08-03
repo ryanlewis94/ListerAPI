@@ -44,6 +44,9 @@ namespace TechAPITest.Controllers
         public ActionResult<IEnumerable<PatientSpellDetails>> GetActivePatientsByWard(int wardId)
         {
             var ward = _wardRepo.GetWardById(wardId);
+            //check if ward exists
+            if (ward == null) return StatusCode(404, $"Ward with id of {wardId} does not exist");
+
             var patients = _patientRepo.GetActivePatientsByWard(wardId);
             //generate message if no active patients in the ward
             if (!patients.Any()) return StatusCode(409, $"There is currently no active Patients at Ward {ward.Name}");

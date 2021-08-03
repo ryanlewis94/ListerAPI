@@ -7,7 +7,7 @@ namespace TechAPITest
 {
     public class ConnectionStrings
     {
-        public string DefaultConnectionString { get; set; }
+        public string DefaultConnection { get; set; }
 
     }
 }
